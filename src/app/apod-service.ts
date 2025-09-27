@@ -8,7 +8,7 @@ import { IAPOD } from './interfaces/IApod';
 })
 export class ApodService {
   private apiKey = 'vIwLftweKsZuJih7bickfdRBahAh6gyuVgfQq0y6';
-  private urlBase = 'https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY';
+  private urlBase = 'https://api.nasa.gov/planetary/apod';
 
   constructor(private http: HttpClient) {}
 
