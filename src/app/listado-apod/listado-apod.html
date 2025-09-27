@@ -1,0 +1,20 @@
+<p>listado-apod works!</p>
+
+<h1>Galería APOD</h1>
+
+<div class="filtros">
+  <input type="date" [(ngModel)]="filtroDate" placeholder="Fecha"/>
+  <input type="date" [(ngModel)]="filtroStart" placeholder="Desde"/>
+  <input type="date" [(ngModel)]="filtroEnd" placeholder="Hasta"/>
+  <input type="number" [(ngModel)]="filtroCount" placeholder="Cantidad"/>
+  <button (click)="cargarApods()">Filtrar</button>
+</div>
+
+<ol>
+  <li *ngFor="let apod of apods; let i = index">
+    <h4 (click)="verDetalle(apod)" style="cursor:pointer">{{ apod.title }} ({{ apod.date }})</h4>
+    <img *ngIf="apod.media_type === 'image'" [src]="apod.url" alt="{{ apod.title }}" width="200"/>
+  </li>
+</ol>
+
+<p *ngIf="apods.length === 0">No hay imágenes para mostrar</p>

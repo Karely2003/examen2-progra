@@ -1,0 +1,12 @@
+<p>detalle-apod works!</p>
+
+<div *ngIf="apod; else cargando">
+  <h2>{{ apod?.title }}</h2>
+  <p><strong>Fecha:</strong> {{ apod?.date }}</p>
+  <img *ngIf="apod.media_type === 'image'" [src]="apod?.hdurl || apod?.url" alt="{{ apod?.title }}" width="500"/>
+  <p>{{ apod?.explanation }}</p>
+</div>
+
+<ng-template #cargando>
+  <p>Cargando detalle...</p>
+</ng-template>
