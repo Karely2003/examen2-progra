@@ -1,13 +1,12 @@
-<p>listado-apod works!</p>
-
 <h1>Galería APOD</h1>
 
 <div class="filtros">
-  <input type="date" [(ngModel)]="filtroDate" placeholder="Fecha"/>
-  <input type="date" [(ngModel)]="filtroStart" placeholder="Desde"/>
-  <input type="date" [(ngModel)]="filtroEnd" placeholder="Hasta"/>
-  <input type="number" [(ngModel)]="filtroCount" placeholder="Cantidad"/>
-  <button (click)="cargarApods()">Filtrar</button>
+  <input #dateInput type="date" placeholder="Fecha"/>
+  <input #startInput type="date" placeholder="Desde"/>
+  <input #endInput type="date" placeholder="Hasta"/>
+  <input #countInput type="number" placeholder="Cantidad"/>
+  
+  <button (click)="cargarApods(dateInput.value, startInput.value, endInput.value, countInput.value)">Filtrar</button>
 </div>
 
 <ol>

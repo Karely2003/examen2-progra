@@ -1,7 +1,7 @@
-import { IApod } from './IApod';
+import { IAPOD } from './IApod';
 
 export interface IListadoApod {
   count: number;
-  results: IApod[];
+  results: IAPOD[];
 }
 
